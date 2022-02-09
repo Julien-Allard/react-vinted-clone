@@ -1,10 +1,16 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
+import Product from "./components/Product";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <div>
-      Hello from <a href="https://www.lereacteur.io">Le Reacteur !</a>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/product/:id" element={<Product />} />
+      </Routes>
+    </Router>
   );
 }
 

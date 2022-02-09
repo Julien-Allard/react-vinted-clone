@@ -1,0 +1,12 @@
+.header-container {
+  width: 1280px;
+  margin: auto;
+}
+
+.main-logo {
+  width: 140px;
+}
+
+.main-logo img {
+  width: 100%;
+}
