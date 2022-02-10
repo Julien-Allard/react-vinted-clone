@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Header from "../components/Header";
 
 const Product = () => {
   const { id } = useParams();
@@ -33,7 +32,6 @@ const Product = () => {
     <div>Chargement en cours</div>
   ) : (
     <>
-      <Header />
       <div className="product-container">
         {data.offers.map((offer, index) => {
           return offer._id === id ? (

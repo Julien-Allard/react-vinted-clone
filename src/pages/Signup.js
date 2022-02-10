@@ -1,4 +1,3 @@
-import Header from "../components/Header";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -41,7 +40,6 @@ const Signup = () => {
 
   return (
     <>
-      <Header />
       <div className="signup-container">
         <div className="signup-form-container">
           <h1>S'inscrire</h1>

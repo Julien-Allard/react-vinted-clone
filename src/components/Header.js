@@ -1,8 +1,15 @@
 import mainLogo from "../assets/img/vinted-logo.png";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import "./header.css";
+import Cookies from "js-cookie";
 
-const Header = () => {
+const Header = ({ token, setToken }) => {
+  const disconnect = () => {
+    Cookies.remove("token");
+    setToken(Cookies.get("token"));
+  };
+
   return (
     <header>
       <div className="header-container">
@@ -12,10 +19,20 @@ const Header = () => {
           </Link>
         </div>
         <div className="signup-connect">
-          <Link to="/signup">
-            <button className="signup">S'inscrire</button>
-          </Link>
-          <button className="connect">Se connecter</button>
+          {token ? (
+            <button className="disconnect" onClick={disconnect}>
+              Se déconnecter
+            </button>
+          ) : (
+            <>
+              <Link to="/signup">
+                <button className="signup">S'inscrire</button>
+              </Link>
+              <Link to="/login">
+                <button className="connect">Se connecter</button>
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </header>
