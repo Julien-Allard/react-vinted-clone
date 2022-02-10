@@ -29,7 +29,11 @@ const Items = () => {
     <div className="items-container">
       {data.offers.map((offer) => {
         return (
-          <Link to={`product/${offer._id}`} className="item-card">
+          <Link
+            key={offer._id}
+            to={`product/${offer._id}`}
+            className="item-card"
+          >
             <div className="user-identity">
               <div className="user-avatar">
                 <img src={offer.owner.account.avatar.secure_url} alt="" />

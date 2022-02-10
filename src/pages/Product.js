@@ -13,6 +13,10 @@ const Product = () => {
       const response = await axios.get(
         "https://lereacteur-vinted-api.herokuapp.com/offers"
       );
+      // Meilleure méthode
+      // const response = await axios.get(`https://lereacteur-vinted-api.herokuapp.com/offers/${id}`)
+      // Il suffit après d'appeler directement les clé nécessaires dans le HTML sans avoir à boucler sur la totalité de data
+      // Si on fait ainsi, mieux vaut mettre id dans le tableau de useEffect afin d'éviter un warning de React dans la console
 
       setData(response.data);
       setIsLoading(false);
@@ -48,6 +52,18 @@ const Product = () => {
                   <span className="product-price">{offer.product_price}</span>
                   <ul className="product-details-list">
                     {offer.product_details.map((detail) => {
+                      // // Meilleure solution, permet de ne pas avoir à mettre de condition pour l'affichage des détails
+                      // // et de ne pas avoir à noter les clés en dur
+                      // const keys = Object.keys(detail); //renvoie ["MARQUE"], puis ["PRIX"]... Object.keys renvoie les clés d'un objet
+                      // return (
+                      //   <>
+                      //   <li>
+                      //     <span>{keys[0]}</span> // ["MARQUE"], ["PRIX"]...
+                      //     <span>{detail[keys[0]]}</span> // Valeur de chaque clé
+                      //   </li>
+                      //   </>
+                      // )
+
                       return (
                         <>
                           {detail.MARQUE ? (
