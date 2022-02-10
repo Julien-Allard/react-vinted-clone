@@ -11,6 +11,12 @@ const Header = () => {
             <img src={mainLogo} alt="" />
           </Link>
         </div>
+        <div className="signup-connect">
+          <Link to="/signup">
+            <button className="signup">S'inscrire</button>
+          </Link>
+          <button className="connect">Se connecter</button>
+        </div>
       </div>
     </header>
   );
