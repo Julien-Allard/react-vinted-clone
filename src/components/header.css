@@ -1,5 +1,10 @@
+header {
+  height: 100px;
+}
+
 .header-container {
   width: 1280px;
+  height: 100%;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -12,4 +17,53 @@
 
 .main-logo img {
   width: 100%;
+}
+
+.signup-connect {
+  display: flex;
+  justify-content: center;
+}
+
+.signup-btn,
+.login-btn,
+.disconnect-btn {
+  cursor: pointer;
+}
+
+.signup-btn,
+.login-btn {
+  width: 115px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid #2cb1ba;
+  border-radius: 5px;
+  color: #2cb1ba;
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+.signup-btn:hover,
+.login-btn:hover {
+  background-color: #2cb1ba;
+  color: white;
+}
+
+.signup-btn {
+  margin-right: 20px;
+}
+
+.disconnect-btn {
+  width: 115px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid #c2175b;
+  border-radius: 5px;
+  color: #c2175b;
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+.disconnect-btn:hover {
+  background-color: #c2175b;
+  color: white;
 }

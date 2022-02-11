@@ -20,16 +20,16 @@ const Header = ({ token, setToken }) => {
         </div>
         <div className="signup-connect">
           {token ? (
-            <button className="disconnect" onClick={disconnect}>
+            <button className="disconnect-btn" onClick={disconnect}>
               Se déconnecter
             </button>
           ) : (
             <>
               <Link to="/signup">
-                <button className="signup">S'inscrire</button>
+                <button className="signup-btn">S'inscrire</button>
               </Link>
               <Link to="/login">
-                <button className="connect">Se connecter</button>
+                <button className="login-btn">Se connecter</button>
               </Link>
             </>
           )}

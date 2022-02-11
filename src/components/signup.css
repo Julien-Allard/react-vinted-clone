@@ -1,8 +1,9 @@
 .signup-container {
   width: 1280px;
-  margin: auto;
+  margin: 30px auto;
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 .signup-form-container {
@@ -12,9 +13,75 @@
   flex-direction: column;
 }
 
+.signup-form-container h1 {
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 50px;
+  margin: 20px 0;
+}
+
 .signup-form-container form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 300px;
+}
+
+.input-text {
+  width: 100%;
+  margin-bottom: 20px;
+  height: 35px;
+  border: none;
+  border-bottom: 1px solid #fcced3;
+  font-size: 17px;
+}
+
+::placeholder {
+  opacity: 0.5;
+}
+
+.signup-newsletter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 30px 0 50px 0;
+  width: 90%;
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  margin-bottom: 10px;
+}
+
+.checkbox-container input {
+  transform: scale(2);
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.signup-newsletter-text {
+  font-size: 14px;
+  opacity: 0.5;
+  text-align: left;
+}
+
+.signup-form-btn {
+  width: 100%;
+  cursor: pointer;
+  color: #fff;
+  background-color: #09adb6;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 0;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.signup-form-btn:hover {
+  background-color: #09adb6a4;
+  color: #fff;
 }

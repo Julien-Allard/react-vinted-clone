@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import "../components/product.css";
 
 const Product = () => {
   const { id } = useParams();
@@ -31,23 +32,23 @@ const Product = () => {
   return isLoading ? (
     <div>Chargement en cours</div>
   ) : (
-    <>
+    <div className="product-body">
       <div className="product-container">
         {data.offers.map((offer, index) => {
           return offer._id === id ? (
             <>
-              <div>
+              <div className="product-all-pictures">
                 {offer.product_pictures.map((picture) => {
                   return (
-                    <div>
+                    <div className="product-picture-container">
                       <img src={picture.secure_url} alt="" />
                     </div>
                   );
                 })}
               </div>
               <div className="product-summary">
-                <div className="product-details">
-                  <span className="product-price">{offer.product_price}</span>
+                <div className="product-summary-details">
+                  <p className="product-price">{offer.product_price} €</p>
                   <ul className="product-details-list">
                     {offer.product_details.map((detail) => {
                       // // Meilleure solution, permet de ne pas avoir à mettre de condition pour l'affichage des détails
@@ -100,8 +101,12 @@ const Product = () => {
                   </ul>
                 </div>
                 <div className="product-description">
-                  <span>{offer.product_name}</span>
-                  <span>{offer.product_description}</span>
+                  <span className="product-description-title">
+                    {offer.product_name}
+                  </span>
+                  <span className="product-description-description">
+                    {offer.product_description}
+                  </span>
                   <div className="product-user-identity">
                     <div className="product-user-avatar">
                       <img src={offer.owner.account.avatar.secure_url} alt="" />
@@ -109,13 +114,13 @@ const Product = () => {
                     <span>{offer.owner.account.username}</span>
                   </div>
                 </div>
-                <button>Acheter</button>
+                <button className="product-buy-btn">Acheter</button>
               </div>
             </>
           ) : null;
         })}
       </div>
-    </>
+    </div>
   );
 };
 
