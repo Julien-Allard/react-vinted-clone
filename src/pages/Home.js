@@ -1,11 +1,11 @@
 import Hero from "../components/Hero";
 import Items from "../components/Items";
 
-const Home = () => {
+const Home = ({ search }) => {
   return (
     <>
       <Hero />
-      <Items />
+      <Items search={search} />
     </>
   );
 };

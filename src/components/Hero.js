@@ -1,7 +1,6 @@
 import "../components/hero.css";
 import tearEffect from "../assets/img/tear.svg";
 import { Link } from "react-router-dom";
-import Login from "../pages/Login";
 
 const Hero = () => {
   return (

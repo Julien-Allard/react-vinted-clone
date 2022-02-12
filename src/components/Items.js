@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import "./items.css";
 import { Link } from "react-router-dom";
 
-const Items = () => {
+const Items = ({ search }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
