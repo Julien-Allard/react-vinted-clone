@@ -20,3 +20,32 @@
   flex-direction: column;
   width: 300px;
 }
+
+.login-form-container h1 {
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 50px;
+  margin: 20px 0;
+}
+
+/* Form input (input-text), même réglages que signup.css */
+
+/* placeholder, réglages dans signup.css */
+
+.login-form-btn {
+  width: 100%;
+  margin-top: 30px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #09adb6;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 0;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.login-form-btn:hover {
+  background-color: #09adb6a4;
+  color: #fff;
+}

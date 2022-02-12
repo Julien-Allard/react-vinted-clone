@@ -40,22 +40,30 @@ const Login = ({ token, setToken }) => {
   return (
     <>
       <div className="login-container">
-        <div className="signup-form-container">
+        <div className="login-form-container">
           <h1>Se connecter</h1>
           <form onSubmit={handleSubmit}>
             <input
+              className="input-text"
               type="text"
+              placeholder="Adresse mail"
               onChange={(event) => {
                 setEmail(event.target.value);
               }}
             />
             <input
+              className="input-text"
               type="password"
+              placeholder="Mot de passe"
               onChange={(event) => {
                 setPassword(event.target.value);
               }}
             />
-            <input type="submit" value="Se connecter" />
+            <input
+              type="submit"
+              value="Se connecter"
+              className="login-form-btn"
+            />
           </form>
         </div>
       </div>
