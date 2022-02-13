@@ -7,6 +7,9 @@ const Items = ({ search }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
+  //RegExp permettant d'ignorer la casse dans la barre de recherche
+  const offerSearch = new RegExp(search, "i");
+
   const fetchData = async () => {
     try {
       const response = await axios.get(
@@ -28,7 +31,12 @@ const Items = ({ search }) => {
   ) : (
     <div className="items-container">
       {data.offers.map((offer) => {
-        return (
+        //return conditionnel :
+        //ne retourne que les éléments du map() qui contiennent les lettres écrites dans la barre de recherche
+        //utilisation de la méthode regex search() qui renvoie un entier qui correspond à l'indice de la première correspondance trouvée dans la chaîne
+        //si rien n'est trouvé, renvoie -1
+        return offer.product_description.search(offerSearch) !== -1 ||
+          offer.product_name.search(offerSearch) !== -1 ? (
           <Link
             key={offer._id}
             to={`product/${offer._id}`}
@@ -61,7 +69,7 @@ const Items = ({ search }) => {
               <span></span>
             </div>
           </Link>
-        );
+        ) : null;
       })}
     </div>
   );
