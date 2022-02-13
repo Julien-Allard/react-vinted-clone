@@ -4,14 +4,15 @@
 }
 
 .items-container {
-  width: 1280px;
-  margin: auto;
+  max-width: 1280px;
+  margin: 30px auto;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .item-card {
-  width: 19%;
+  width: 243.2px;
   margin: 5px;
   cursor: pointer;
 }

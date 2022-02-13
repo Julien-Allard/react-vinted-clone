@@ -4,7 +4,7 @@
 }
 
 .product-container {
-  width: 1280px;
+  max-width: 1280px;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
@@ -106,4 +106,22 @@
 .product-buy-btn:hover {
   background-color: #09adb6a4;
   color: #fff;
+}
+
+@media (max-width: 860px) {
+  .product-body {
+    display: flex;
+    justify-content: center;
+  }
+
+  .product-container {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  .product-summary {
+    width: 450px;
+    height: 600px;
+    margin-bottom: 30px;
+  }
 }

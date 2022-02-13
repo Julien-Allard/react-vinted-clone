@@ -1,5 +1,5 @@
 .login-container {
-  width: 1280px;
+  max-width: 1280px;
   margin: 30px auto;
   display: flex;
   justify-content: center;
