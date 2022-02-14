@@ -8,7 +8,7 @@
   margin: 30px auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .item-card {
@@ -66,4 +66,46 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
+}
+
+.page-btn-container {
+  max-width: 1280px;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-btn {
+  width: 100px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #09adb6;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 0;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.page-btn:hover {
+  background-color: #09adb6a4;
+  color: #fff;
+}
+
+.page-btn-off {
+  width: 100px;
+  cursor: not-allowed;
+  background-color: #00000031;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 0;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.page-btn-container span {
+  font-size: 18px;
+  padding: 0 10px;
 }
