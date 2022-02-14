@@ -1,0 +1,103 @@
+.publish-body {
+  background-color: #ebedee;
+  padding: 30px 0;
+}
+
+.publish-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.publish-container h1 {
+  font-size: 24px;
+  text-align: left;
+  padding: 20px 0;
+  font-weight: 600;
+}
+
+.publish-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.publish-title,
+.publish-description,
+.publish-brand,
+.publish-size,
+.publish-color,
+.publish-condition,
+.publish-city,
+.publish-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.publish-title,
+.publish-description,
+.publish-brand,
+.publish-size,
+.publish-color,
+.publish-condition,
+.publish-city {
+  border-bottom: 1px solid #dee1e2;
+}
+
+.picture-bloc,
+.text-bloc,
+.details-bloc,
+.price-bloc {
+  margin-bottom: 20px;
+  background-color: white;
+  border: 1px solid #c5c8c9;
+  border-radius: 5px;
+}
+
+.publish-container span {
+  width: 50%;
+  font-weight: 600;
+}
+
+.text-bloc input,
+.details-bloc input,
+.publish-price input {
+  width: 50%;
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid #c5c8c994;
+}
+
+.checkbox-bloc {
+  display: flex;
+  justify-content: space-between;
+}
+
+.blank {
+  width: 50%;
+}
+.checkbox-container {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.publish-btn {
+  width: 100%;
+  height: 40px;
+  background-color: #2cb1ba;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.publish-btn:hover {
+  background-color: white;
+  color: #2cb1ba;
+  border: 1px solid #2cb1ba;
+}

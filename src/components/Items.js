@@ -20,10 +20,6 @@ const Items = ({ search }) => {
     if (page < maxPage) {
       setPage(page + 1);
     }
-
-    if (page === maxPage) {
-      setLimit();
-    }
   };
 
   useEffect(() => {
@@ -40,7 +36,7 @@ const Items = ({ search }) => {
       }
     };
     fetchData();
-  }, [search, page]);
+  }, [search, page, limit]);
 
   return isLoading ? (
     <div>Chargement en cours...</div>

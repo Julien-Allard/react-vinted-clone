@@ -37,15 +37,24 @@ const Product = () => {
         {data.offers.map((offer, index) => {
           return offer._id === id ? (
             <>
-              <div className="product-all-pictures">
-                {offer.product_pictures.map((picture) => {
-                  return (
-                    <div className="product-picture-container">
-                      <img src={picture.secure_url} alt="" />
-                    </div>
-                  );
-                })}
-              </div>
+              {offer.product_pictures.length !== 0 ? (
+                <div className="product-all-pictures">
+                  {offer.product_pictures.map((picture) => {
+                    return (
+                      <div className="product-picture-container">
+                        <img src={picture.secure_url} alt="" />
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : (
+                <div className="product-all-pictures">
+                  <div className="product-picture-container">
+                    <img src={offer.product_image.secure_url} alt="" />
+                  </div>
+                </div>
+              )}
+
               <div className="product-summary">
                 <div className="product-summary-details">
                   <p className="product-price">{offer.product_price} €</p>
@@ -108,9 +117,15 @@ const Product = () => {
                     {offer.product_description}
                   </span>
                   <div className="product-user-identity">
-                    <div className="product-user-avatar">
-                      <img src={offer.owner.account.avatar.secure_url} alt="" />
-                    </div>
+                    {offer.owner.account.hasOwnProperty("avatar") && (
+                      <div className="product-user-avatar">
+                        <img
+                          src={offer.owner.account.avatar.secure_url}
+                          alt=""
+                        />
+                      </div>
+                    )}
+
                     <span>{offer.owner.account.username}</span>
                   </div>
                 </div>

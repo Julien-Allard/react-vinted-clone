@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import "../components/publish.css";
 
 const Publish = ({ token }) => {
   const [picture, setPicture] = useState("");
@@ -50,101 +51,106 @@ const Publish = ({ token }) => {
   };
 
   return token ? (
-    <div className="publish-container">
-      <h1>Vends ton article</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <input
-            type="file"
-            onChange={(event) => {
-              setPicture(event.target.files[0]);
-            }}
-          />
-        </div>
-        <div>
-          <div>
-            <span>Titre</span>{" "}
+    <div className="publish-body">
+      <div className="publish-container">
+        <h1>Vends ton article</h1>
+        <form onSubmit={handleSubmit} className="publish-form">
+          <div className="picture-bloc">
             <input
-              type="text"
+              type="file"
               onChange={(event) => {
-                setTitle(event.target.value);
+                setPicture(event.target.files[0]);
               }}
             />
           </div>
-          <div>
-            <span>Décris ton article</span>{" "}
-            <input
-              type="text"
-              onChange={(event) => {
-                setDescription(event.target.value);
-              }}
-            />
+          <div className="text-bloc">
+            <div className="publish-title">
+              <span>Titre</span>{" "}
+              <input
+                type="text"
+                onChange={(event) => {
+                  setTitle(event.target.value);
+                }}
+              />
+            </div>
+            <div className="publish-description">
+              <span>Décris ton article</span>{" "}
+              <input
+                type="text"
+                onChange={(event) => {
+                  setDescription(event.target.value);
+                }}
+              />
+            </div>
           </div>
-        </div>
-        <div>
-          <div>
-            <span>Marque</span>
-            <input
-              type="text"
-              onChange={(event) => {
-                setBrand(event.target.value);
-              }}
-            />
+          <div className="details-bloc">
+            <div className="publish-brand">
+              <span>Marque</span>
+              <input
+                type="text"
+                onChange={(event) => {
+                  setBrand(event.target.value);
+                }}
+              />
+            </div>
+            <div className="publish-size">
+              <span>Taille</span>
+              <input
+                type="text"
+                onChange={(event) => {
+                  setSize(event.target.value);
+                }}
+              />
+            </div>
+            <div className="publish-color">
+              <span>Couleur</span>
+              <input
+                type="text"
+                onChange={(event) => {
+                  setColor(event.target.value);
+                }}
+              />
+            </div>
+            <div className="publish-condition">
+              <span>Etat</span>
+              <input
+                type="text"
+                onChange={(event) => {
+                  setCondition(event.target.value);
+                }}
+              />
+            </div>
+            <div className="publish-city">
+              <span>Lieu</span>
+              <input
+                type="text"
+                onChange={(event) => {
+                  setCity(event.target.value);
+                }}
+              />
+            </div>
           </div>
-          <div>
-            <span>Taille</span>
-            <input
-              type="text"
-              onChange={(event) => {
-                setSize(event.target.value);
-              }}
-            />
+          <div className="price-bloc">
+            <div className="publish-price">
+              <span>Prix</span>
+              <input
+                type="text"
+                onChange={(event) => {
+                  setPrice(event.target.value);
+                }}
+              />
+            </div>
+            <div className="checkbox-bloc">
+              <div className="blank"></div>
+              <div className="checkbox-container">
+                <input type="checkbox" />
+                <span>Je suis intéressé par les échanges</span>
+              </div>
+            </div>
           </div>
-          <div>
-            <span>Couleur</span>
-            <input
-              type="text"
-              onChange={(event) => {
-                setColor(event.target.value);
-              }}
-            />
-          </div>
-          <div>
-            <span>Etat</span>
-            <input
-              type="text"
-              onChange={(event) => {
-                setCondition(event.target.value);
-              }}
-            />
-          </div>
-          <div>
-            <span>Lieu</span>
-            <input
-              type="text"
-              onChange={(event) => {
-                setCity(event.target.value);
-              }}
-            />
-          </div>
-        </div>
-        <div>
-          <div>
-            <span>Prix</span>
-            <input
-              type="text"
-              onChange={(event) => {
-                setPrice(event.target.value);
-              }}
-            />
-          </div>
-          <div>
-            <input type="checkbox" />
-            <span>Je suis intéressé par les échanges</span>
-          </div>
-          <input type="submit" value="Ajouter" />
-        </div>
-      </form>
+          <input type="submit" value="Ajouter" className="publish-btn" />
+        </form>
+      </div>
     </div>
   ) : (
     <Navigate to="/login" />
