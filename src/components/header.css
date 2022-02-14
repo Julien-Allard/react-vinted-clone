@@ -91,7 +91,7 @@ header {
   color: white;
 }
 
-.publish-btn {
+.publish-header-btn {
   cursor: pointer;
   width: 115px;
   height: 30px;
@@ -103,7 +103,7 @@ header {
   transition: 0.3s;
 }
 
-.publish-btn:hover {
+.publish-header-btn:hover {
   background-color: #2cb0ba70;
 }
 

@@ -8,9 +8,23 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Header from "./components/Header";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMagnifyingGlass,
+  faPlus,
+  faArrowRight,
+  faArrowLeft,
+  faAnglesLeft,
+  faAnglesRight,
+} from "@fortawesome/free-solid-svg-icons";
 import Publish from "./pages/Publish";
-library.add(faMagnifyingGlass);
+library.add(
+  faMagnifyingGlass,
+  faPlus,
+  faArrowRight,
+  faArrowLeft,
+  faAnglesLeft,
+  faAnglesRight
+);
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token"));

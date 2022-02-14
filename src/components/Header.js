@@ -53,7 +53,7 @@ const Header = ({ token, setToken, setSearch }) => {
           )}
         </div>
         <Link to="/publish">
-          <button className="publish-btn">Vends tes articles</button>
+          <button className="publish-header-btn">Vends tes articles</button>
         </Link>
       </div>
     </header>

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../components/publish.css";
 
 const Publish = ({ token }) => {
@@ -58,16 +59,30 @@ const Publish = ({ token }) => {
           <div className="picture-bloc">
             <input
               type="file"
+              id="file-upload"
               onChange={(event) => {
                 setPicture(event.target.files[0]);
+                console.log(event.target.files[0]);
               }}
             />
+            <div className="label-container">
+              <label htmlFor="file-upload">
+                <FontAwesomeIcon icon="plus" className="square-icon" />
+                Ajoute une photo
+              </label>
+            </div>
+            {picture !== "" && (
+              <p className="img-selection">
+                Image sélectionnée: {picture.name}{" "}
+              </p>
+            )}
           </div>
           <div className="text-bloc">
             <div className="publish-title">
-              <span>Titre</span>{" "}
+              <span>Titre</span>
               <input
                 type="text"
+                placeholder="ex: Chemise Sézane verte"
                 onChange={(event) => {
                   setTitle(event.target.value);
                 }}
@@ -75,8 +90,8 @@ const Publish = ({ token }) => {
             </div>
             <div className="publish-description">
               <span>Décris ton article</span>{" "}
-              <input
-                type="text"
+              <textarea
+                placeholder="ex: porté quelquefois, taille ceintrée"
                 onChange={(event) => {
                   setDescription(event.target.value);
                 }}
@@ -88,6 +103,7 @@ const Publish = ({ token }) => {
               <span>Marque</span>
               <input
                 type="text"
+                placeholder="ex: Zara"
                 onChange={(event) => {
                   setBrand(event.target.value);
                 }}
@@ -97,6 +113,7 @@ const Publish = ({ token }) => {
               <span>Taille</span>
               <input
                 type="text"
+                placeholder="ex: L / 40 / 12ans"
                 onChange={(event) => {
                   setSize(event.target.value);
                 }}
@@ -106,6 +123,7 @@ const Publish = ({ token }) => {
               <span>Couleur</span>
               <input
                 type="text"
+                placeholder="ex: Fushia"
                 onChange={(event) => {
                   setColor(event.target.value);
                 }}
@@ -115,6 +133,7 @@ const Publish = ({ token }) => {
               <span>Etat</span>
               <input
                 type="text"
+                placeholder="ex: Comme neuf"
                 onChange={(event) => {
                   setCondition(event.target.value);
                 }}
@@ -124,6 +143,7 @@ const Publish = ({ token }) => {
               <span>Lieu</span>
               <input
                 type="text"
+                placeholder="ex: Toulouse"
                 onChange={(event) => {
                   setCity(event.target.value);
                 }}
@@ -135,6 +155,7 @@ const Publish = ({ token }) => {
               <span>Prix</span>
               <input
                 type="text"
+                placeholder="0.00 €"
                 onChange={(event) => {
                   setPrice(event.target.value);
                 }}

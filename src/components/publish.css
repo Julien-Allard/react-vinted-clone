@@ -24,6 +24,52 @@
   flex-direction: column;
 }
 
+.picture-bloc {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.picture-bloc input {
+  display: none;
+}
+
+.label-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: #2cb1ba;
+  width: 225px;
+  height: 45px;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 2px solid #2cb1ba;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.label-container label {
+  cursor: pointer;
+}
+
+.label-container:hover {
+  background-color: #2cb1ba;
+  color: white;
+}
+
+.label-container .square-icon {
+  margin-right: 5px;
+}
+
+.picture-bloc .img-selection {
+  position: absolute;
+  right: 505px;
+  top: 135px;
+}
+
 .publish-title,
 .publish-description,
 .publish-brand,
@@ -72,6 +118,14 @@
   border-bottom: 1px solid #c5c8c994;
 }
 
+.publish-description textarea {
+  width: 50%;
+  height: 100px;
+  border: none;
+  border-bottom: 1px solid #c5c8c994;
+  resize: none;
+}
+
 .checkbox-bloc {
   display: flex;
   justify-content: space-between;
@@ -80,17 +134,24 @@
 .blank {
   width: 50%;
 }
+
 .checkbox-container {
   width: 50%;
   display: flex;
   justify-content: flex-start;
 }
 
+.checkbox-container span {
+  font-weight: 500;
+}
+
 .publish-btn {
+  cursor: pointer;
   width: 100%;
   height: 40px;
   background-color: #2cb1ba;
   border-radius: 5px;
+  border: none;
   color: white;
   font-size: 16px;
   transition: 0.3s;
