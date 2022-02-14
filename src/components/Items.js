@@ -6,12 +6,9 @@ import { Link } from "react-router-dom";
 const Items = ({ search }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  const [page, setPage] = useState(1);
   const [maxPage, setMaxPage] = useState();
   const [limit, setLimit] = useState(10);
-
-  // const limit = 10;
-  // const pageMax = data.count % limit;
+  const [page, setPage] = useState(1);
 
   const pageDown = () => {
     if (page > 1) {
@@ -23,22 +20,25 @@ const Items = ({ search }) => {
     if (page < maxPage) {
       setPage(page + 1);
     }
-  };
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(
-        `https://lereacteur-vinted-api.herokuapp.com/offers?page=${page}&limit=${limit}&title=${search}`
-      );
-      setMaxPage((response.data.count % limit) - 1);
-      setData(response.data);
-      setIsLoading(false);
-    } catch (error) {
-      console.log(error.response);
+    if (page === maxPage) {
+      setLimit();
     }
   };
 
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `https://lereacteur-vinted-api.herokuapp.com/offers?page=${page}&limit=${limit}&title=${search}`
+        );
+        setMaxPage(response.data.count % limit);
+        setData(response.data);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.response);
+      }
+    };
     fetchData();
   }, [search, page]);
 
@@ -73,13 +73,15 @@ const Items = ({ search }) => {
                 className="item-card"
               >
                 <div className="user-identity">
-                  <div className="user-avatar">
-                    <img src={offer.owner.account.avatar.secure_url} alt="" />
-                  </div>
+                  {offer.owner.account.hasOwnProperty("avatar") && (
+                    <div className="user-avatar">
+                      <img src={offer.owner.account.avatar.url} alt="" />
+                    </div>
+                  )}
                   <span>{offer.owner.account.username}</span>
                 </div>
                 <div className="item-picture">
-                  <img src={offer.product_pictures[0].secure_url} alt="" />
+                  <img src={offer.product_image.url} alt="" />
                 </div>
                 <div className="product-details">
                   <span className="item-price">{offer.product_price} €</span>
