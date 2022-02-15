@@ -72,7 +72,7 @@ const Signup = () => {
               }}
             />
             <div className="signup-newsletter">
-              <span className="checkbox-container">
+              <span className="signup-checkbox-container">
                 <input
                   type="checkbox"
                   onChange={(event) => {
