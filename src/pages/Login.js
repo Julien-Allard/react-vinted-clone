@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
 import "../components/login.css";
 import axios from "axios";
@@ -65,6 +66,9 @@ const Login = ({ token, setToken }) => {
               className="login-form-btn"
             />
           </form>
+          <Link to="/signup">
+            <p className="to-signup-text">Pas encore inscrit ? Par ici !</p>
+          </Link>
         </div>
       </div>
     </>

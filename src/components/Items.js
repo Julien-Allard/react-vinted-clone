@@ -26,7 +26,7 @@ const Items = ({ search }) => {
 
   const pageUp = () => {
     if (page < maxPage) {
-      setPage(page + 1);
+      setPage(Number(page + 1));
     }
   };
 
@@ -66,12 +66,20 @@ const Items = ({ search }) => {
         </button>
         <button
           onClick={pageDown}
-          className={page === 1 ? "page-btn-off" : "page-btn"}
+          className={page <= 1 ? "page-btn-off" : "page-btn"}
         >
           <FontAwesomeIcon icon="arrow-left" />
         </button>
         <span>
-          {page} / {maxPage}
+          <input
+            type="number"
+            value={page}
+            className="page-selection"
+            onChange={(event) => {
+              setPage(Number(event.target.value));
+            }}
+          />
+          / {maxPage}
         </span>
         <button
           onClick={pageUp}
