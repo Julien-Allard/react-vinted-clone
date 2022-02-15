@@ -33,6 +33,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   width: 400px;
   background-color: #fff;
   padding: 30px;
@@ -41,6 +42,7 @@
 .product-summary-details {
   border-bottom: 1px solid #ebedee;
   padding-bottom: 20px;
+  width: 100%;
 }
 
 .product-price {
@@ -92,7 +94,12 @@
   border-radius: 50%;
 }
 
+.product-buy-btn-container {
+  width: 100%;
+}
+
 .product-buy-btn {
+  width: 100%;
   cursor: pointer;
   color: #fff;
   background-color: #09adb6;

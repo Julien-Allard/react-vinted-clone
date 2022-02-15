@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "../components/product.css";
 
@@ -125,11 +126,20 @@ const Product = () => {
                         />
                       </div>
                     )}
-
                     <span>{offer.owner.account.username}</span>
                   </div>
                 </div>
-                <button className="product-buy-btn">Acheter</button>
+                <Link
+                  to="/payment"
+                  className="product-buy-btn-container"
+                  state={{
+                    title: offer.product_name,
+                    amount: offer.product_price,
+                    userId: offer.owner._id,
+                  }}
+                >
+                  <button className="product-buy-btn">Acheter</button>
+                </Link>
               </div>
             </>
           ) : null;

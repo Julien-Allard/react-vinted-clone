@@ -17,6 +17,7 @@ import {
   faAnglesRight,
 } from "@fortawesome/free-solid-svg-icons";
 import Publish from "./pages/Publish";
+import Payment from "./pages/Payment";
 library.add(
   faMagnifyingGlass,
   faPlus,
@@ -42,6 +43,7 @@ function App() {
           element={<Login token={token} setToken={setToken} />}
         />
         <Route path="/publish" element={<Publish token={token} />} />
+        <Route path="/payment" element={<Payment />} />
       </Routes>
     </Router>
   );

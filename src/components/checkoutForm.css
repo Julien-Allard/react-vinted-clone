@@ -1,0 +1,22 @@
+.card-element {
+  border: 2px solid rgba(167, 161, 161, 0.582);
+  padding: 10px 5px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.payment-form-container button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #02c06d;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.payment-form-container button:hover {
+  background-color: #02c06e77;
+}
