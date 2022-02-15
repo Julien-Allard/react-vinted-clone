@@ -15,6 +15,8 @@ import {
   faArrowLeft,
   faAnglesLeft,
   faAnglesRight,
+  faCircleUp,
+  faCircleDown,
 } from "@fortawesome/free-solid-svg-icons";
 import Publish from "./pages/Publish";
 import Payment from "./pages/Payment";
@@ -24,18 +26,30 @@ library.add(
   faArrowRight,
   faArrowLeft,
   faAnglesLeft,
-  faAnglesRight
+  faAnglesRight,
+  faCircleUp,
+  faCircleDown
 );
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token"));
   const [search, setSearch] = useState("");
+  const [sort, setSort] = useState("price-asc");
 
   return (
     <Router>
-      <Header token={token} setToken={setToken} setSearch={setSearch} />
+      <Header
+        token={token}
+        setToken={setToken}
+        setSearch={setSearch}
+        sort={sort}
+        setSort={setSort}
+      />
       <Routes>
-        <Route path="/" element={<Home search={search} token={token} />} />
+        <Route
+          path="/"
+          element={<Home search={search} token={token} sort={sort} />}
+        />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/signup" element={<Signup />} />
         <Route

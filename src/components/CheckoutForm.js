@@ -13,6 +13,7 @@ const CheckoutForm = ({ product, amount, userId }) => {
   const handleSubmit = async (event) => {
     try {
       event.preventDefault();
+      // console.log(product, amount, userId);
 
       const cardElements = elements.getElement(CardElement);
 

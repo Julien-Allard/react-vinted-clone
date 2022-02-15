@@ -23,6 +23,9 @@ header {
   width: 590px;
   position: relative;
   margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .header-searchbar-icon {
@@ -40,6 +43,64 @@ header {
   font-size: 18px;
   padding-left: 40px;
   border-radius: 5px;
+}
+
+.sort-asc-desc {
+  display: flex;
+  margin-top: 15px;
+}
+
+.sort-asc-desc span {
+  font-size: 14px;
+}
+
+#sort-checkbox {
+  display: none;
+}
+
+.sort-checkbox {
+  cursor: pointer;
+  border: 1px solid #2cb1ba;
+  width: 50px;
+  border-radius: 10px;
+  position: relative;
+  margin-left: 8px;
+  height: 19px;
+  background-color: #2cb1ba;
+}
+
+.sort-icon-asc,
+.sort-icon-desc {
+  position: absolute;
+  color: white;
+  font-size: 17px;
+  transition: 0.3s;
+}
+
+.sort-icon-asc {
+  animation: 0.3s linear 0s 1 slideInFromRight forwards;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(120%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.sort-icon-desc {
+  animation: 0.3s linear 0s 1 slideInFromLeft forwards;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(180%);
+  }
 }
 
 .signup-connect {

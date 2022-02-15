@@ -4,7 +4,7 @@ import "./items.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Items = ({ search }) => {
+const Items = ({ search, sort }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [maxPage, setMaxPage] = useState();
@@ -40,7 +40,7 @@ const Items = ({ search }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://lereacteur-vinted-api.herokuapp.com/offers?limit=${limit}&page=${page}&title=${search}`
+          `https://lereacteur-vinted-api.herokuapp.com/offers?limit=${limit}&page=${page}&title=${search}&sort=${sort}`
         );
         setData(response.data);
         setLimit(10);
@@ -51,7 +51,7 @@ const Items = ({ search }) => {
       }
     };
     fetchData();
-  }, [search, page, limit]);
+  }, [search, page, limit, sort]);
 
   return isLoading ? (
     <div>Chargement en cours...</div>
