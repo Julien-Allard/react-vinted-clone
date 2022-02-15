@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
+import { Link } from "react-router-dom";
 import "./checkoutForm.css";
 import axios from "axios";
 
@@ -48,7 +49,12 @@ const CheckoutForm = ({ product, amount, userId }) => {
           <button type="submit">Payer</button>
         </form>
       ) : (
-        <p>Paiement effectué !</p>
+        <div className="payment-successful">
+          <span>Paiement effectué !</span>
+          <Link to="/" className="payment-successful-home">
+            Retour à l'accueil ?
+          </Link>
+        </div>
       )}
     </>
   );

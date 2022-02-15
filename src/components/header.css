@@ -100,6 +100,7 @@ header {
   border-radius: 5px;
   color: white;
   font-size: 12px;
+  margin-left: 10px;
   transition: 0.3s;
 }
 
@@ -109,7 +110,7 @@ header {
 
 @media (max-width: 800px) {
   header {
-    height: 150px;
+    height: 200px;
   }
 
   .header-container {
@@ -119,5 +120,9 @@ header {
 
   .header-search-container {
     width: 500px;
+  }
+
+  .publish-header-btn {
+    margin-left: 0;
   }
 }
