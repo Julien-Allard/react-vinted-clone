@@ -40,7 +40,7 @@ const Items = ({ search }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://lereacteur-vinted-api.herokuapp.com/offers?title=${search}&limit=${limit}&page=${page}`
+          `https://lereacteur-vinted-api.herokuapp.com/offers?limit=${limit}&page=${page}&title=${search}`
         );
         setData(response.data);
         setLimit(10);

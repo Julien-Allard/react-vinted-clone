@@ -43,8 +43,12 @@ const Publish = ({ token }) => {
           },
         }
       );
-      navigate("/");
-      console.log(response);
+      // console.log(response);
+
+      //Si submit réussi, récupère l'ID de l'offer et redirige directement vers sa page en se servant de son ID
+      if (response.data._id) {
+        navigate(`/product/${response.data._id}`);
+      }
     } catch (error) {
       console.log(error.response);
       console.log(error.message);
@@ -62,7 +66,7 @@ const Publish = ({ token }) => {
               id="file-upload"
               onChange={(event) => {
                 setPicture(event.target.files[0]);
-                console.log(event.target.files[0]);
+                // console.log(event.target.files[0]);
               }}
             />
             <div className="label-container">

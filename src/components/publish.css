@@ -139,10 +139,17 @@
   width: 50%;
   display: flex;
   justify-content: flex-start;
+  padding-bottom: 15px;
 }
 
 .checkbox-container span {
   font-weight: 500;
+}
+
+.checkbox-container input {
+  cursor: pointer;
+  margin-right: 10px;
+  transform: scale(1.5);
 }
 
 .publish-btn {
