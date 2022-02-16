@@ -9,7 +9,7 @@ const stripePromise = loadStripe("pk_test_5z9rSB8XwuAOihoBixCMfL6X");
 
 const Payment = ({ token }) => {
   const location = useLocation();
-  const { title, amount, userId } = location.state;
+  const { title, amount } = location.state;
 
   return token ? (
     <div className="payment-body">
@@ -40,7 +40,7 @@ const Payment = ({ token }) => {
           frais de port inclus).
         </p>
         <Elements stripe={stripePromise}>
-          <CheckoutForm product={title} amount={amount} userId={userId} />
+          <CheckoutForm product={title} amount={amount} />
         </Elements>
       </div>
     </div>

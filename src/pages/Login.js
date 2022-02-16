@@ -26,7 +26,9 @@ const Login = ({ token, setToken }) => {
       );
 
       const token = response.data.token;
+      const userIdentity = response.data._id;
       Cookies.set("token", token);
+      Cookies.set("userIdentity", userIdentity);
       setToken(token);
 
       navigate("/publish");

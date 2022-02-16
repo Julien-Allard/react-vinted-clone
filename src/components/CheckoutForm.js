@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
 import "./checkoutForm.css";
 import axios from "axios";
 
@@ -19,7 +20,7 @@ const CheckoutForm = ({ product, amount, userId }) => {
 
       //je fais une demande de token vers Stripe. Si ok, stripeResponse contient objet avec clé token (entre autres)
       const stripeResponse = await stripe.createToken(cardElements, {
-        name: userId,
+        name: Cookies.get("userIdentity"),
       });
       // console.log(stripeResponse);
 

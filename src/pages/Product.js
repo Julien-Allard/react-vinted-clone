@@ -135,7 +135,6 @@ const Product = () => {
                   state={{
                     title: offer.product_name,
                     amount: offer.product_price,
-                    userId: offer.owner._id,
                   }}
                 >
                   <button className="product-buy-btn">Acheter</button>
