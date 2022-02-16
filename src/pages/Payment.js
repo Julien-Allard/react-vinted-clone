@@ -1,16 +1,17 @@
 import { loadStripe } from "@stripe/stripe-js"; //Pour récupérer mon API key Stripe
 import { Elements } from "@stripe/react-stripe-js"; //Pour indiquer tout ce qui est envoyé à Stripe
 import { useLocation } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import CheckoutForm from "../components/CheckoutForm";
 import "../components/payment.css";
 
 const stripePromise = loadStripe("pk_test_5z9rSB8XwuAOihoBixCMfL6X");
 
-const Payment = () => {
+const Payment = ({ token }) => {
   const location = useLocation();
   const { title, amount, userId } = location.state;
 
-  return (
+  return token ? (
     <div className="payment-body">
       <div className="payment-container">
         <h2>Résumé de la commande</h2>
@@ -43,6 +44,8 @@ const Payment = () => {
         </Elements>
       </div>
     </div>
+  ) : (
+    <Navigate to="/login" />
   );
 };
 
