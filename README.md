@@ -1,5 +1,7 @@
 # Vinted Clone with React
 
+<img src="https://res.cloudinary.com/df4imwogd/image/upload/v1648207560/GitHub/vinted-banner_jmculm.png"/>
+
 First full-stack project based on the Vinted website.
 The goal was to clone it and make good use of a personnal API.
 
