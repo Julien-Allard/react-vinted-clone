@@ -66,7 +66,7 @@
 
 .picture-bloc .img-selection {
   position: absolute;
-  right: 505px;
+  right: 405px;
   top: 135px;
 }
 
@@ -82,6 +82,16 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+}
+
+.publish-price {
+  position: relative;
+}
+
+.publish-price p {
+  position: absolute;
+  top: 27px;
+  left: 48%;
 }
 
 .publish-title,

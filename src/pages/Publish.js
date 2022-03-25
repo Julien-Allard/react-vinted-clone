@@ -34,7 +34,7 @@ const Publish = ({ token }) => {
 
     try {
       const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
+        "https://my-vinted-clone.herokuapp.com/offer/publish",
         data,
         {
           headers: {
@@ -77,7 +77,7 @@ const Publish = ({ token }) => {
             </div>
             {picture !== "" && (
               <p className="img-selection">
-                Image sélectionnée: {picture.name}{" "}
+                Image sélectionnée: {picture.name}
               </p>
             )}
           </div>
@@ -157,9 +157,10 @@ const Publish = ({ token }) => {
           <div className="price-bloc">
             <div className="publish-price">
               <span>Prix</span>
+              <p>€</p>
               <input
                 type="text"
-                placeholder="0.00 €"
+                placeholder="0.00"
                 onChange={(event) => {
                   setPrice(event.target.value);
                 }}

@@ -5,7 +5,9 @@ import { Navigate } from "react-router-dom";
 import CheckoutForm from "../components/CheckoutForm";
 import "../components/payment.css";
 
-const stripePromise = loadStripe("pk_test_5z9rSB8XwuAOihoBixCMfL6X");
+const stripePromise = loadStripe(
+  "pk_test_51KTQKMIYeDxJJTmyWjk0JpyOkoqYp7EJsJIsa2PLAZ6W66FWDMvSExZHKoBqSnFuewe5zvXuZ7ZKwu0eM0pPTgLX00WYTY1HVE"
+);
 
 const Payment = ({ token }) => {
   const location = useLocation();

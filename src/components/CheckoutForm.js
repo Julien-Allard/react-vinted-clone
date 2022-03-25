@@ -25,17 +25,17 @@ const CheckoutForm = ({ product, amount, userId }) => {
       // console.log(stripeResponse);
 
       const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/payment",
+        "https://my-vinted-clone.herokuapp.com/payment",
         {
           token: stripeResponse.token.id,
           title: product,
-          amount: amount,
+          amount: amount + 0.4 + 0.8,
         }
       );
 
-      console.log(response.data);
+      // console.log(response.data.response.status);
 
-      if (response.data.status === "succeeded") {
+      if (response.data.response.status === "succeeded") {
         setSuccess(true);
       }
     } catch (error) {

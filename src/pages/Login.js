@@ -21,7 +21,7 @@ const Login = ({ token, setToken }) => {
       };
 
       const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/user/login",
+        "https://my-vinted-clone.herokuapp.com/user/login",
         data
       );
 
@@ -33,7 +33,7 @@ const Login = ({ token, setToken }) => {
 
       navigate("/publish");
 
-      console.log(response);
+      // console.log(response);
     } catch (error) {
       console.log(error.message);
       console.log(error.response);
