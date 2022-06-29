@@ -1,12 +1,12 @@
-import { loadStripe } from "@stripe/stripe-js"; //Pour récupérer mon API key Stripe
-import { Elements } from "@stripe/react-stripe-js"; //Pour indiquer tout ce qui est envoyé à Stripe
-import { useLocation } from "react-router-dom";
-import { Navigate } from "react-router-dom";
-import CheckoutForm from "../components/CheckoutForm";
-import "../components/payment.css";
+import { loadStripe } from '@stripe/stripe-js'; //Pour récupérer mon API key Stripe
+import { Elements } from '@stripe/react-stripe-js'; //Pour indiquer tout ce qui est envoyé à Stripe
+import { useLocation } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+import CheckoutForm from '../../components/CheckoutForm/CheckoutForm';
+import './payment.css';
 
 const stripePromise = loadStripe(
-  "pk_test_51KTQKMIYeDxJJTmyWjk0JpyOkoqYp7EJsJIsa2PLAZ6W66FWDMvSExZHKoBqSnFuewe5zvXuZ7ZKwu0eM0pPTgLX00WYTY1HVE"
+  'pk_test_51KTQKMIYeDxJJTmyWjk0JpyOkoqYp7EJsJIsa2PLAZ6W66FWDMvSExZHKoBqSnFuewe5zvXuZ7ZKwu0eM0pPTgLX00WYTY1HVE',
 );
 
 const Payment = ({ token }) => {
@@ -36,8 +36,8 @@ const Payment = ({ token }) => {
           <span>{(amount + 1.2).toFixed(2)} €</span>
         </div>
         <p className="payment-text-summary">
-          Il ne vous reste plus qu'une étape pour vous offrir{" "}
-          <span>{title}</span>. Vous allez payer{" "}
+          Il ne vous reste plus qu'une étape pour vous offrir{' '}
+          <span>{title}</span>. Vous allez payer{' '}
           <span>{(amount + 1.2).toFixed(2)} €</span> (frais de protection et
           frais de port inclus).
         </p>

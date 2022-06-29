@@ -1,13 +1,13 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
-import Cookies from "js-cookie";
-import "./App.css";
-import Product from "./pages/Product";
-import Home from "./pages/Home";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
-import Header from "./components/Header";
-import { library } from "@fortawesome/fontawesome-svg-core";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
+import Cookies from 'js-cookie';
+import './App.css';
+import Product from './pages/Product/Product';
+import Home from './pages/Home/Home';
+import Signup from './pages/Signup/Signup';
+import Login from './pages/Login/Login';
+import Header from './components/Header/Header';
+import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faMagnifyingGlass,
   faPlus,
@@ -17,9 +17,9 @@ import {
   faAnglesRight,
   faCircleUp,
   faCircleDown,
-} from "@fortawesome/free-solid-svg-icons";
-import Publish from "./pages/Publish";
-import Payment from "./pages/Payment";
+} from '@fortawesome/free-solid-svg-icons';
+import Publish from './pages/Publish/Publish';
+import Payment from './pages/Payment/Payment';
 library.add(
   faMagnifyingGlass,
   faPlus,
@@ -28,13 +28,13 @@ library.add(
   faAnglesLeft,
   faAnglesRight,
   faCircleUp,
-  faCircleDown
+  faCircleDown,
 );
 
 function App() {
-  const [token, setToken] = useState(Cookies.get("token"));
-  const [search, setSearch] = useState("");
-  const [sort, setSort] = useState("price-asc");
+  const [token, setToken] = useState(Cookies.get('token'));
+  const [search, setSearch] = useState('');
+  const [sort, setSort] = useState('price-asc');
 
   return (
     <Router>

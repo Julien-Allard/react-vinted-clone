@@ -1,18 +1,18 @@
-import axios from "axios";
-import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../components/publish.css";
+import axios from 'axios';
+import { useState } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './publish.css';
 
 const Publish = ({ token }) => {
-  const [picture, setPicture] = useState("");
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [brand, setBrand] = useState("");
-  const [size, setSize] = useState("");
-  const [color, setColor] = useState("");
-  const [condition, setCondition] = useState("");
-  const [city, setCity] = useState("");
+  const [picture, setPicture] = useState('');
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [brand, setBrand] = useState('');
+  const [size, setSize] = useState('');
+  const [color, setColor] = useState('');
+  const [condition, setCondition] = useState('');
+  const [city, setCity] = useState('');
   const [price, setPrice] = useState();
   // const [trade, setTrade] = useState(false);
 
@@ -22,26 +22,26 @@ const Publish = ({ token }) => {
     event.preventDefault();
 
     const data = new FormData();
-    data.append("title", title);
-    data.append("description", description);
-    data.append("brand", brand);
-    data.append("size", size);
-    data.append("color", color);
-    data.append("city", city);
-    data.append("price", price);
-    data.append("condition", condition);
-    data.append("picture", picture);
+    data.append('title', title);
+    data.append('description', description);
+    data.append('brand', brand);
+    data.append('size', size);
+    data.append('color', color);
+    data.append('city', city);
+    data.append('price', price);
+    data.append('condition', condition);
+    data.append('picture', picture);
 
     try {
       const response = await axios.post(
-        "https://my-vinted-clone.herokuapp.com/offer/publish",
+        'https://my-vinted-clone.herokuapp.com/offer/publish',
         data,
         {
           headers: {
             Authorization: `Bearer ${token}`,
-            "Content-Type": "multipart/form-data",
+            'Content-Type': 'multipart/form-data',
           },
-        }
+        },
       );
       // console.log(response);
 
@@ -75,7 +75,7 @@ const Publish = ({ token }) => {
                 Ajoute une photo
               </label>
             </div>
-            {picture !== "" && (
+            {picture !== '' && (
               <p className="img-selection">
                 Image sélectionnée: {picture.name}
               </p>
@@ -93,7 +93,7 @@ const Publish = ({ token }) => {
               />
             </div>
             <div className="publish-description">
-              <span>Décris ton article</span>{" "}
+              <span>Décris ton article</span>{' '}
               <textarea
                 placeholder="ex: porté quelquefois, taille ceintrée"
                 onChange={(event) => {

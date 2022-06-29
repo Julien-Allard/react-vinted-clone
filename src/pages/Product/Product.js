@@ -1,8 +1,8 @@
-import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
-import "../components/product.css";
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import './product.css';
 
 const Product = () => {
   const { id } = useParams();
@@ -13,7 +13,7 @@ const Product = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://my-vinted-clone.herokuapp.com/offer/${id}`
+          `https://my-vinted-clone.herokuapp.com/offer/${id}`,
         );
 
         setData(response.data);
@@ -58,7 +58,7 @@ const Product = () => {
               {data.product_description}
             </span>
             <div className="product-user-identity">
-              {data.owner.account.hasOwnProperty("avatar") && (
+              {data.owner.account.hasOwnProperty('avatar') && (
                 <div className="product-user-avatar">
                   <img src={data.owner.account.avatar.secure_url} alt="" />
                 </div>

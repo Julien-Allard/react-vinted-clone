@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-import Cookies from "js-cookie";
-import "../components/login.css";
-import axios from "axios";
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Cookies from 'js-cookie';
+import './login.css';
+import axios from 'axios';
 
 const Login = ({ token, setToken }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const navigate = useNavigate();
 
@@ -21,17 +21,17 @@ const Login = ({ token, setToken }) => {
       };
 
       const response = await axios.post(
-        "https://my-vinted-clone.herokuapp.com/user/login",
-        data
+        'https://my-vinted-clone.herokuapp.com/user/login',
+        data,
       );
 
       const token = response.data.token;
       const userIdentity = response.data._id;
-      Cookies.set("token", token);
-      Cookies.set("userIdentity", userIdentity);
+      Cookies.set('token', token);
+      Cookies.set('userIdentity', userIdentity);
       setToken(token);
 
-      navigate("/publish");
+      navigate('/publish');
 
       // console.log(response);
     } catch (error) {

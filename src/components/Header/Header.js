@@ -1,13 +1,13 @@
-import mainLogo from "../assets/img/vinted-logo.png";
-import { Link } from "react-router-dom";
-import "./header.css";
-import Cookies from "js-cookie";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import mainLogo from '../../assets/img/vinted-logo.png';
+import { Link } from 'react-router-dom';
+import './header.css';
+import Cookies from 'js-cookie';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Header = ({ token, setToken, setSearch, sort, setSort }) => {
   const disconnect = () => {
-    Cookies.remove("token");
-    setToken(Cookies.get("token"));
+    Cookies.remove('token');
+    setToken(Cookies.get('token'));
   };
 
   const searchItem = (value) => {
@@ -17,11 +17,11 @@ const Header = ({ token, setToken, setSearch, sort, setSort }) => {
   //Gestion du tri dans l'ordre asc/desc
   const handleSort = (isChecked) => {
     if (isChecked === false) {
-      setSort("price-asc");
+      setSort('price-asc');
     }
 
     if (isChecked === true) {
-      setSort("price-desc");
+      setSort('price-desc');
     }
   };
 
@@ -50,7 +50,7 @@ const Header = ({ token, setToken, setSearch, sort, setSort }) => {
             <div className="sort-asc-desc">
               <span>Trier par prix :</span>
               <label htmlFor="sort-checkbox" className="sort-checkbox">
-                {sort === "price-asc" ? (
+                {sort === 'price-asc' ? (
                   <FontAwesomeIcon icon="circle-up" className="sort-icon-asc" />
                 ) : (
                   <FontAwesomeIcon
