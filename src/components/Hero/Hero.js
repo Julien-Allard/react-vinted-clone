@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Hero = ({ token }) => {
   return (
-    <div className="hero-container">
+    <div className="hero-container" data-testid="hero">
       <img className="hero-blank" src={tearEffect} alt="" />
       <div>
         <p>Prêts à faire du tri dans vos placards ?</p>

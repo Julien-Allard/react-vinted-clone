@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import './login.css';
 import axios from 'axios';
@@ -48,7 +47,7 @@ const Login = ({ token, setToken }) => {
           <form onSubmit={handleSubmit}>
             <input
               className="input-text"
-              type="text"
+              type="email"
               placeholder="Adresse mail"
               onChange={(event) => {
                 setEmail(event.target.value);
